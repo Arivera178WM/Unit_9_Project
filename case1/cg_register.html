@@ -19,6 +19,12 @@
    <title>CGIP Registration Form</title>
    <link href="cg_base.css" rel="stylesheet" />
    <link href="cg_styles.css" rel="stylesheet" />
+   <link href="cg_forms.css" rel="stations">
+   <link href="cg_validate.css" rel="stylesheet">
+   <script src="cg_script.js">
+
+      </script>
+
 </head>
 
 <body>
@@ -50,6 +56,16 @@
    <section>
       <h1>Conference Registration Form</h1>
       <p>Required Item (*)</p>
+      <form action="http://www.example.com/cg/register" method="post" > 
+         Title: <input name="Title" id="titleBox" type="text"><br>
+         Frist Name: <input name="firstName" id="fnBox" type="text" required><br>
+         Last name: <input name="lastName" id="lnBox" type="text" required><br>
+         Address: <textarea name="address" id="addBox" type="text" required></textarea><br>
+         Company or University: <input name="group" id="groupbox" type="text" ><br>
+         E-Mail: <input name="email" id="mailBox" type="email" required><br>
+         Phone Number: <input name="phoneNumber" id="phoneBox" type="tel" lable="(nnn)nnn-nnnn"required><br>
+         ACGIP Membership Number: <input name="acgipID" id="idBox" type="text" ><br>
+      </form>
       
    </section>
    
