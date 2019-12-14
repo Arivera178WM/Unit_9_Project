@@ -5,13 +5,10 @@
       New Perspectives on HTML5 and CSS3, 7th Edition
       Tutorial 7
       Case Problem 1
-
       CGIP Registration Form
-      Author: 
-      Date:   
-
+      Author:
+      Date:
       Filename:   cg_register.html
-
    -->
    
    <meta charset="utf-8" />
@@ -19,13 +16,11 @@
    <title>CGIP Registration Form</title>
    <link href="cg_base.css" rel="stylesheet" />
    <link href="cg_styles.css" rel="stylesheet" />
-   <link href="cg_forms.css" rel="stations">
-   <link href="cg_validate.css" rel="stylesheet">
-   <script src="cg_script.js">
-
-      </script>
-
+   <link href="cg_forms.css" rel="stylesheet"/>
+   <link href="cg_validate.css" rel="stylesheet"/>
+   <script src="cg_script.js"></script>
 </head>
+
 
 <body>
    <header>
@@ -56,17 +51,53 @@
    <section>
       <h1>Conference Registration Form</h1>
       <p>Required Item (*)</p>
-      <form action="http://www.example.com/cg/register" method="post" > 
-         Title: <input name="Title" id="titleBox" type="text"><br>
-         Frist Name: <input name="firstName" id="fnBox" type="text" required><br>
-         Last name: <input name="lastName" id="lnBox" type="text" required><br>
-         Address: <textarea name="address" id="addBox" type="text" required></textarea><br>
-         Company or University: <input name="group" id="groupbox" type="text" ><br>
-         E-Mail: <input name="email" id="mailBox" type="email" required><br>
-         Phone Number: <input name="phoneNumber" id="phoneBox" type="tel" lable="(nnn)nnn-nnnn"required><br>
-         ACGIP Membership Number: <input name="acgipID" id="idBox" type="text" ><br>
-      </form>
+      <form action="http://www.example.com/cg/register" method="post">
+         <label for="titleBox">Title</label>
+         <input name="title" id="titleBox" type="text" list="titleList"/>
+         <datalist id="titleList">
+            <option value="Mr."/>
+            <option value="Mrs."/>
+            <option value="Ms."/>
+            <option value="Prof."/>
+            <option value="Dr."/>
+            <option value="Assist."/>
+            <option value="Prof."/>
+            <option value="Assoc. Prof."/>
+         </datalist>
+         
+         <label for="fnBox">First Name*</label>
+         <input name="firstName" id="fnBox" type="text" required/>
+         
+         <label for="lnBox">Last Name*</label>
+         <input name="lastName" id="lnBox" type="text" required/>
+         
+         <label for="address">Address*</label>
+         <textarea name="address" id="addBox" required></textarea>
+         
+         <label for="group">Company or University</label>
+         <input name="group" id="groupBox" type="text"/>
+         
+         <label for="email">E-mail*</label>
+         <input name="email" id="mailBox" type="email" required />
+         
+         <label for="phoneBox">Phone Number*</label>
+         <input name="phoneNumber" id="phoneBox" type="tel" required placeholder="(nnn) nnn-nnnn" pattern="^\d{10}$|^(\(\d{3}\)\s*)?\d{3}[\s-]?\d{4}$"/>
+         
+         <label for="idBox">ACGIP Membership Number</label>
+         <input name="acgipID" id="idBox" type="text" placeholder="acgip-nnnnnn" pattern="^acgip\-\d{6}$"/>
       
+         <label for="regList">Registration Category</label>
+         <select name="registerType" id="regList">
+            <option value="member">ACGIP Member ($695)</option>
+            <option value="nonmember">Non-Member ($795)</option>
+            <option value="student">Student ($310)</option>
+            <option value="poster">Poster ($95)</option>
+            <option value="guest">Guest ($35)</option>
+         </select>
+         <p>
+            <input type="submit" value="continue"/>
+         </p>
+      </form>
    </section>
    
    <aside>
